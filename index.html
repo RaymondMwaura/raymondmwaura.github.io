@@ -1,1 +1,98 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Raymond Mwaura Software/Web Developer Portfolio">
+<meta name="keywords" content="Raymond Mwaura Software/Web Developer Portfolio">
+<meta name="author" content="Raymond Mwaura">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>Raymond Mwaura</title>
+<style>
+html {
+  font-size: 1rem;
+}
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}
+body{
+  background-color: blueviolet;
+  color: whitesmoke;
+}
+.container{
+  padding-top: 20px;
+}
+h4{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+a{
+  font-weight: bold;
+  color: hotpink;
+}
+p {
+  white-space: pre-line;
+ }
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 5px;
+  padding: 10px;
+}
+.grid-item {
+  border-style: solid;
+  border-width: medium;
+  border-radius: 25px;
+  border-style: outset;
+  padding: 5px;
+} 
+</style>
+</head>
+<body>
+<div class="container grid-container">
+  <h3>MY PROJECTS</h3>
+  <div class="entry grid-item">
+    <h4>VoteApp</h4>
+    <a href="http://awsvoteapp-env.twdbyi2uiw.us-east-2.elasticbeanstalk.com/" target="_blank">Go to App</a>
+    <p>TEST PASSWORDS
+    Superuser:	MeO89I2l!
+    Official:	7angazA!
+    Voter:		P1gadebe</p>
+  </div>
+  <div class="entry grid-item">
+    <h4>ICT Services Kenya</h4>
+    <a href="https://ictserviceskenya.herokuapp.com/" target="_blank">Go to App</a>
+    <p>TEST PASSWORDS
+    To be posted soon
+    </p>
+  </div>
+  <div class="entry grid-item">
+    <h4>Publishing House</h4>
+    <a href="https://publishinghouse.herokuapp.com/" target="_blank">Go to App</a>
+    <p>TEST PASSWORDS
+    To be posted soon
+    </p>
+  </div>
+  <div class="entry grid-item">
+    <h4>Service Rank (Munde)</h4>
+    <a href="http://pure-beach-33578.herokuapp.com/" target="_blank">Go to App</a>
+    <p>TEST PASSWORDS
+    To be posted soon
+    </p>
+  </div>
+</div>  
+</body>
+</html>
