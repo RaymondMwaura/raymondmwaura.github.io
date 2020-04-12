@@ -1,2 +1,1 @@
-# acrunam.github.io
-Portfolio showcase website
+# portfolio_boilerplate
