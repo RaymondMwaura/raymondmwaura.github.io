@@ -1,90 +1,535 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="description" content="Raymond Mwaura Software/Web Developer Portfolio">
-<meta name="keywords" content="Raymond Mwaura Software/Web Developer Portfolio">
-<meta name="author" content="Raymond Mwaura">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<title>Raymond Mwaura</title>
-<style>
-html {
-  font-size: 1rem;
-}
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 1.2rem;
-  }
-}
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 1.4rem;
-  }
-}
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 1.6rem;
-  }
-}
-body{
-  background-color: blueviolet;
-  color: whitesmoke;
-}
-.container{
-  padding-top: 20px;
-}
-h4{
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-a{
-  font-weight: bold;
-  color: hotpink;
-}
-p {
-  white-space: pre-line;
- }
-.grid-container {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-gap: 5px;
-  padding: 10px;
-}
-.grid-item {
-  border-style: solid;
-  border-width: medium;
-  border-radius: 25px;
-  border-style: outset;
-  padding: 5px;
-} 
-</style>
-</head>
-<body>
-<div class="container grid-container">
-  <h3>MY PROJECTS</h3>
-  <div class="entry grid-item">
-    <h4>ICT Services Kenya</h4>
-    <a href="https://ictserviceskenya.herokuapp.com/" target="_blank">Go to App</a>
-    <p>TEST PASSWORDS
-    To be posted soon
-    </p>
-  </div>
-  <div class="entry grid-item">
-    <h4>Publishing House</h4>
-    <a href="https://publishinghouse.herokuapp.com/" target="_blank">Go to App</a>
-    <p>TEST PASSWORDS
-    To be posted soon
-    </p>
-  </div>
-  <div class="entry grid-item">
-    <h4>Service Rank (Munde)</h4>
-    <a href="http://pure-beach-33578.herokuapp.com/" target="_blank">Go to App</a>
-    <p>TEST PASSWORDS
-    To be posted soon
-    </p>
-  </div>
-</div>  
-</body>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <title>Raymond Mwaura</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Raymond Mwaura - Portfolio"/>
+    <meta name="keywords" content="Raymond, Mwaura, Portfolio, Resume, JavaScript, React, Node, GraphQL" />
+    <meta name="author" content="lmtheme" />
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="css/transition-animations.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/main-red.css" type="text/css">
+
+    <!-- This styles needs for demo -->
+    <link rel="stylesheet" href="preview/lmpixels-demo-panel.css" type="text/css">
+    <!-- /This styles needs for demo -->
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-96534204-1', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+  </head>
+
+  <body>
+    <!-- Loading animation -->
+    <div class="preloader">
+      <div class="preloader-animation">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+      </div>
+    </div>
+    <!-- /Loading animation -->
+
+    <div id="page" class="page template-style-dark">
+      <!-- Header -->
+      <header id="site_header" class="header mobile-menu-hide header-color-dark">
+        <div class="my-photo tilt-effect">
+          <img src="images/photo.png" alt="image">
+        </div>
+
+        <div class="site-title-block">
+          <h1 class="site-title">Raymond Mwaura</h1>
+        </div>
+
+        <!-- Navigation -->
+        <div class="site-nav">
+          <!-- Main menu -->
+          <ul id="nav" class="site-main-menu">
+            <li>
+              <a class="pt-trigger" href="#home" data-animation="21"><i class="menu-icon pe-7s-icon pe-7s-home"></i>Home</a><!-- href value = data-id without # of .pt-page. -->
+            </li>
+            <li>
+              <a class="pt-trigger" href="#about_me" data-animation="17"><i class="menu-icon pe-7s-icon pe-7s-user"></i>About me</a>
+            </li>
+            <li>
+              <a class="pt-trigger" href="#resume" data-animation="18"><i class="menu-icon pe-7s-icon pe-7s-id"></i>Resume</a>
+            </li>
+            <li>
+              <a class="pt-trigger" href="#portfolio" data-animation="19"><i class="menu-icon pe-7s-icon pe-7s-portfolio"></i>Portfolio</a>
+            </li>
+            <li>
+              <a class="pt-trigger" href="#contact" data-animation="20"><i class="menu-icon pe-7s-icon pe-7s-mail"></i>Contact</a>
+            </li>
+          </ul>
+          <!-- /Main menu -->
+        </div>
+        <!-- Navigation -->
+      </header>
+      <!-- /Header -->
+
+      <!-- Mobile Header -->
+      <div class="mobile-header mobile-visible">
+        <div class="mobile-logo-container">
+          <div class="mobile-site-title">Raymond Mwaura</div>
+        </div>
+
+        <a class="menu-toggle mobile-visible">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <!-- /Mobile Header -->
+
+      <!-- Main Content -->
+      <div id="main" class="site-main">
+        <!-- Page changer wrapper -->
+        <div class="pt-wrapper" style="background-image: url(images/main_bg_light.jpg);">
+          <!-- Subpages -->
+          <div class="subpages">
+
+            <!-- Home Subpage -->
+            <section class="pt-page pt-page-1 section-without-bg section-paddings-0 table" data-id="home">
+              <div class="section-inner">
+                <div class="home-page-block">
+                  <h2>Raymond Mwaura</h2>
+                  <div class="owl-carousel text-rotation">                                    
+                    <div class="item">
+                      <p class="home-page-description">Full-stack developer</p>
+                    </div>
+                    <div class="item">
+                      <p class="home-page-description">Database Administrator</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- End of Home Subpage -->
+
+            <!-- About Me Subpage -->
+            <section class="pt-page pt-page-2" data-id="about_me">
+              <div class="border-block-top-110"></div>
+              <div class="section-inner">
+                <div class="section-title-block">
+                  <div class="section-title-wrapper clearfix">
+                    <h2 class="section-title">About Me</h2>
+                    <h5 class="section-description">Logistician, Punctilious</h5>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-6 col-md-6 col-lg-4 subpage-block">
+                    <div class="my-photo-block tilt-effect">
+                      <img src="images/photo.png" alt="">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-6 col-lg-4">
+                    <h3>I am a Software Developer</h3>
+                    <p>I am an enthusiastic software developer with a tenacious and
+                      proactive attitude. I pay attention to detail and test
+                      multiple edge cases when delivering my work.</p>
+                    <p>I enjoy coding and strive to do it better each day and
+                      add value to my stakeholders. I am also a team player who
+                      understands the value of working on diverse teams while
+                      leveraging my communication skills and professionalism
+                      to be effective and efficient.</p>
+                  </div>
+
+                  <div class="col-sm-6 col-md-6 col-lg-4 subpage-block">
+                    <ul class="info-list">
+                      <li><span class="title">Residence</span><span class="value">Kenya</span></li>
+                      <li><span class="title">Address</span><span class="value">Nairobi; Remote</span></li>
+                      <li><span class="title">Freelance</span><span class="value available">Available</span></li>
+                    </ul>
+                  </div>
+                </div>
+
+               <!-- Services block -->
+                <div class="block-title">
+                  <h3>Services</h3>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-6 col-md-3 subpage-block">
+                    <div class="service-block"> 
+                      <div class="service-info">
+                        <img src="images/service/web_design_icon.png" alt="Responsive Design">
+                        <h4>Back-end</h4>
+                        <p>CRUD using NodeJS, ExpressJS, GraphQL</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-3 subpage-block">
+                    <div class="service-block"> 
+                      <div class="service-info">
+                        <img src="images/service/photography_icon.png" alt="Photography">
+                        <h4>Front-end</h4>
+                        <p>Responsive interfaces using ReactJS, Redux, Apollo-React, Material UI, Bootstrap</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-3 subpage-block">
+                    <div class="service-block"> 
+                      <div class="service-info">
+                        <img src="images/service/creativity_icon.png" alt="Creativity">
+                        <h4>Databases</h4>
+                        <p>Database administration experience with various database systems: MySQL, PostgreSQL, Oracle, MongoDB</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-3 subpage-block">
+                    <div class="service-block"> 
+                      <div class="service-info">
+                        <img src="images/service/advetising_icon.png" alt="Advetising">
+                        <h4>DevOps</h4>
+                        <p>Continuous integration and DevOps experience with Heroku, TravisCI, CodeClimate, GitHub</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of Services block -->
+
+              </div>
+            </section>
+            <!-- End of About Me Subpage -->
+
+            <!-- Resume Subpage -->
+            <section class="pt-page pt-page-3" data-id="resume">
+              <div class="border-block-top-110"></div>
+              <div class="section-inner">
+                <div class="section-title-block">
+                  <div class="section-title-wrapper">
+                    <h2 class="section-title">Resume</h2>
+                    <h5 class="section-description">Over a years experience</h5>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-6 col-md-4 subpage-block">
+                    <div class="block-title">
+                      <h3>Education</h3>
+                    </div>
+                    <div class="timeline">
+                      <!-- Single event -->
+                      <div class="timeline-event te-primary">
+                        <h5 class="event-date">2019</h5>
+                        <h4 class="event-name">Bachelor of Business Information Technology</h4>
+                        <span class="event-description">Strathmore University</span>
+                        <p>This training built my ability to assess a business' information needs and build
+                          management information systems that help them gather, process and anaylze information
+                          to come up with useful insights for their decision making.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-4 subpage-block">
+                    <div class="block-title">
+                      <h3>Experience</h3>
+                    </div>
+                    <div class="timeline">
+                      <!-- Single event -->
+                      <div class="timeline-event te-primary">
+                        <h5 class="event-date">Oct 2019 - Mar 2020</h5>
+                        <h4 class="event-name">Trainee Software Developer</h4>
+                        <span class="event-description">Andela Rwanda Ltd</span>
+                        <p>Full-stack JavaScript software developer
+                          (Node, Express, PostgreSQL, GraphQL, React, Redux)</p>
+                      </div>
+                      <!-- Single event -->
+                      <div class="timeline-event te-primary">
+                        <h5 class="event-date">Aug 2017 - Mar 2018</h5>
+                        <h4 class="event-name">Software Engineering Intern</h4>
+                        <span class="event-description">Wavuh Limited (Kenya)</span>
+                        <p>Full-stack web development (PHP, MySQL, JavaScript, DHTMLX)</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-4 subpage-block">
+                    <div class="block-title">
+                      <h3>Design Skills</h3>
+                    </div>
+                    <div class="skills-info">
+                      <h4>Prototyping</h4>                               
+                      <div class="skill-container">
+                        <div class="skill-percentage skill-9"></div>
+                      </div>
+                    </div>
+
+                    <div class="block-title">
+                      <h3>Coding Skills</h3>
+                    </div>
+                    <div class="skills-info">
+                      <h4>NodeJS</h4>
+                      <div class="skill-container">
+                        <div class="skill-percentage skill-6"></div>
+                      </div>
+
+                      <h4>ReactJS</h4>
+                      <div class="skill-container">
+                        <div class="skill-percentage skill-7"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- End Resume Subpage -->
+
+            <!-- Portfolio Subpage -->
+            <section class="pt-page pt-page-4" data-id="portfolio">
+              <div class="border-block-top-110"></div>
+              <div class="section-inner">
+                <div class="section-title-block">
+                  <div class="section-title-wrapper">
+                    <h2 class="section-title">Portfolio</h2>
+                    <h5 class="section-description">My Work</h5>
+                  </div>
+                </div>
+
+                <!-- Portfolio Content -->
+                <div class="portfolio-content">
+
+                  <!-- Portfolio Grid -->
+                  <div id="portfolio_grid" class="portfolio-grid portfolio-masonry masonry-grid-3">
+
+                    <!-- Portfolio Item 1 -->
+                    <figure class="item" data-groups='["all", "media"]'>
+                      <a target="_blank" href="https://boondocks-bn-frontend-staging.herokuapp.com/home">
+                        <img src="images/portfolio/1.jpg" alt="">
+                        <div>
+                          <h5 class="name">Barefoot Nomad</h5>
+                        </div>
+                      </a>
+                    </figure>
+                    <!-- /Portfolio Item 1 -->
+
+                    <!-- Portfolio Item 4 -->
+                    <figure class="item" data-groups='["all", "media"]'>
+                      <a target="_blank" href="https://ictserviceskenya.website/forms/official_login.php">
+                        <img src="images/portfolio/4.jpg" alt="">
+                        <div>
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">VoteApp</h5>
+                              <p style="color: black;">National ID: 888336</p>
+                              <p style="color: black;">Password: Test@123</p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </figure>
+                    <!-- /Portfolio Item 4 -->
+
+                    <!-- Portfolio Item 6 -->
+                    <figure class="item" data-groups='["all", "media"]'>
+                      <a target="_blank" href="https://ictserviceskenya.herokuapp.com/">
+                        <img src="images/portfolio/6.jpg" alt="">
+                        <div>
+                          <h5 class="name">ICT Services Kenya Ltd</h5>
+                        </div>
+                      </a>
+                    </figure>
+                    <!-- /Portfolio Item 6 -->
+
+                    <!-- Portfolio Item 8 -->
+                    <figure class="item" data-groups='["all",  "media"]'>
+                      <a target="_blank" href="https://publishinghouse.herokuapp.com/">
+                        <img src="images/portfolio/8.jpg" alt="">
+                        <div>
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Publishing House</h5>
+                              <p style="color: black;">Email: super@administrator.com</p>
+                              <p style="color: black;">Password: Test@123</p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </figure>
+                    <!-- /Portfolio Item 8 -->
+
+                    <!-- Portfolio Item 12 -->
+                    <figure class="item" data-groups='["all","media"]'>
+                      <a target="_blank" href="https://basic-weather-applet.herokuapp.com/">
+                        <img src="images/portfolio/12.jpg" alt="">
+                        <div>
+                          <h5 class="name">Weather App</h5>
+                        </div>
+                      </a>
+                    </figure>
+                    <!-- /Portfolio Item 12 -->
+
+                    <!-- Portfolio Item 13 -->
+                    <figure class="item" data-groups='["all","media"]'>
+                      <a target="_blank" href="https://gapweekapp.herokuapp.com/">
+                        <img src="images/portfolio/13.jpg" alt="">
+                        <div>
+                          <h5 class="name">Currency Converter</h5>
+                        </div>
+                      </a>
+                    </figure>
+                    <!-- /Portfolio Item 12 -->
+                  </div>
+                  <!-- /Portfolio Grid -->
+
+                </div>
+                <!-- /Portfolio Content -->
+              </div>
+            </section>
+            <!-- /Portfolio Subpage -->
+
+            <!-- Contact Subpage -->
+            <section class="pt-page pt-page-5" data-id="contact">
+              <div class="border-block-top-110"></div>
+              <div class="section-inner">
+                <div class="section-title-block">
+                  <div class="section-title-wrapper">
+                    <h2 class="section-title">Contact</h2>
+                    <h5 class="section-description">Get in Touch</h5>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-6 col-md-6 subpage-block">
+                    <div class="block-title">
+                      <h3>Get in Touch</h3>
+                    </div>
+                    <p>Get in touch with me for your software development needs.</p>
+                    <div class="contact-info-block">
+                      <div class="ci-icon">
+                        <i class="pe-7s-icon pe-7s-map-marker"></i>
+                      </div>
+                      <div class="ci-text">
+                        <h5>Nairobi, Kenya; Remote</h5>
+                      </div>
+                    </div>
+                    <div class="contact-info-block">
+                      <div class="ci-icon">
+                        <i class="pe-7s-icon pe-7s-check"></i>
+                      </div>
+                      <div class="ci-text">
+                        <h5>Freelance Available</h5>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-6 subpage-block">
+                    <div class="block-title">
+                      <h3>Contact Form</h3>
+                    </div>
+                    <form id="contact-form" method="post" action="https://lmpixels.com/demo/unique/unique-vcard/contact_form/contact_form.php">
+
+                      <div class="messages"></div>
+
+                      <div class="controls">
+                        <div class="form-group">
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Full Name" required="required" data-error="Name is required.">
+                            <div class="form-control-border"></div>
+                            <i class="form-control-icon pe-7s-user"></i>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Email Address" required="required" data-error="Valid email is required.">
+                            <div class="form-control-border"></div>
+                            <i class="form-control-icon pe-7s-mail"></i>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Message for Me" rows="4" required="required" data-error="Please, leave me a message."></textarea>
+                            <div class="form-control-border"></div>
+                            <i class="form-control-icon pe-7s-comment"></i>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <input type="submit" class="button btn-send" value="Send message">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- End Contact Subpage -->
+
+          </div>
+        </div>
+        <!-- /Page changer wrapper -->
+      </div>
+      <!-- /Main Content -->
+    </div>
+
+    <!-- Demo Color changer -->
+    <a id="lm_demo_panel_switcher" class="lm-demo-panel-switcher right"><i class="fa fa-gear"></i></a>
+    <div id="lm_demo_panel" class="lm-demo-panel right panel-color-red">
+      <div class="demo-panel-title">Template Style</div>
+      <div id="t_style" class="demo-panel-options">
+        <a class="t-style-switcher" data-id="template-style-light"><div class="preview w-border t-style t-style-light">Light</div></a>
+        <a class="current-t-style t-style-switcher" data-id="template-style-dark"><div class="preview t-style t-style-dark">Dark</div></a>
+      </div>
+
+      <div class="demo-panel-title">Main Color</div>
+      <div id="main_color" class="demo-panel-options">
+        <a data-id="red" class="current-main-color"><div class="preview color-1">&nbsp;</div></a>
+        <a data-id="blue"><div class="preview color-2">&nbsp;</div></a>
+        <a data-id="green"><div class="preview color-3">&nbsp;</div></a>
+        <a data-id="orange"><div class="preview color-4">&nbsp;</div></a>
+        <a data-id="yellow"><div class="preview color-5">&nbsp;</div></a>
+        <a data-id="violet"><div class="preview color-6">&nbsp;</div></a>
+      </div>
+
+      <div class="demo-panel-title">Nav Color</div>
+      <div id="header_color" class="demo-panel-options">
+        <a class="inverse h-color-switcher" data-id="header-color-light"><div class="preview h-color h-color-1 w-border">&nbsp;</div></a>
+        <a class="h-color-switcher" data-id="header-color-main"><div class="preview h-color h-color-2">&nbsp;</div></a>
+        <a class="current-h-color h-color-switcher" data-id="header-color-dark"><div class="preview h-color h-color-3">&nbsp;</div></a>
+      </div>
+
+      <div class="demo-panel-title mobile-hidden">Nav Position</div>
+      <div id="header_position" class="demo-panel-options mobile-hidden">
+        <a class="current-layout layout-switcher" data-id="layout-menu-left"><div class="preview layout left">Left</div></a>
+        <a class="layout-switcher" data-id="layout-menu-top"><div class="preview layout top">Top</div></a>
+        <a class="layout-switcher" data-id="layout-menu-bottom"><div class="preview layout bottom">Bottom</div></a>
+      </div>
+    </div>
+    <!-- /Demo Color changer -->
+
+    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/bootstrap.min.js"></script>
+    <script src="js/pages-switcher.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/jquery.shuffle.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/tilt.jquery.min.js"></script>
+    <script src="js/jquery.hoverdir.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Demo Color changer Script -->
+    <script src="preview/lmpixels-demo-panel.js"></script>
+    <!-- /Demo Color changer Script -->
+  </body>
 </html>
