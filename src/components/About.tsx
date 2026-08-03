@@ -1,4 +1,4 @@
-import profileImage from "@/assets/profile.webp";
+import { Monogram } from "@/components/Monogram";
 import { SectionHeading } from "@/components/SectionHeading";
 import { profile, skillGroups } from "@/content/profile";
 
@@ -27,18 +27,10 @@ export const About = () => (
       </div>
 
       <figure className="flex flex-[0_1_320px] flex-col gap-2.5">
-        <img
-          src={profileImage}
-          alt={`Portrait of ${profile.name}`}
-          width={655}
-          height={829}
-          loading="lazy"
-          decoding="async"
-          className="h-[400px] w-full border border-border object-cover"
-        />
+        <Monogram />
 
         <figcaption className="label text-[10px] text-ink-muted leading-[1.5] tracking-[0.13em]">
-          {profile.name}, {profile.location}
+          {profile.name}
         </figcaption>
       </figure>
     </div>

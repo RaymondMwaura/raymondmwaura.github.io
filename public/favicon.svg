@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Raymond Mwaura">
+  <!--
+    A single letterform, not the full RWM monogram: three letters are illegible at the
+    16px favicons actually render at. Georgia stands in for Newsreader because a favicon
+    cannot load a webfont, and it is the same serif genre.
+    Sienna and cream are the site's own accent and ink values, flattened to sRGB hex so
+    older browsers that ignore oklch still get the right mark.
+  -->
+  <rect width="64" height="64" rx="6" fill="#b8622f" />
+  <text
+    x="32"
+    y="33"
+    fill="#f4f0e8"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="42"
+    font-weight="500"
+    text-anchor="middle"
+    dominant-baseline="central"
+  >R</text>
+</svg>
