@@ -4,9 +4,6 @@ import type { Project } from "./types";
 /**
  * Deliberately short. Three considered projects read stronger than ten thin ones, and
  * every entry here is something that can actually be discussed in an interview.
- *
- * NOTE: the Barefoot Nomad and HOA Flow entries contain placeholder copy marked TODO.
- * Replace them before publishing — do not ship invented detail.
  */
 export const projects: readonly Project[] = [
   {
@@ -40,14 +37,27 @@ export const projects: readonly Project[] = [
     name: "HOA Flow",
     context: "Independent project",
     status: "in-development",
-    // TODO(raymond): replace this block with the real description before publishing.
-    summary: "TODO — one line on what HOA Flow does and who it is for.",
-    problem: "TODO — what is broken about how homeowners' associations handle this today?",
-    approach: "TODO — the build: architecture, notable decisions, what you deliberately left out.",
+    summary:
+      "Recurring billing for homeowners' associations — dues generation, auto-pay and late fees on tokenized cards.",
+    problem:
+      "Self-managed associations still collect dues by cheque and bank transfer, then reconcile them in a spreadsheet once a month. Modern billing SaaS is almost universally built on Stripe, but associations — like universities, healthcare and government-adjacent buyers — are frequently mandated onto bank-backed processors such as CyberSource, where very little modern software exists.",
+    approach:
+      "Billing runs as a database-backed job queue drained by a daily cron rather than as ad-hoc scripts, which makes every step inspectable and re-runnable. Dues generation is idempotent on a period key; status transitions, late fees and auto-pay are separate jobs with a defined running order. Auto-pay claims an attempt counter before it charges and parks uncertain outcomes behind a pending-transaction guard, so a retry or an overlapping run cannot double-charge a resident. Cards are tokenized through CyberSource Flex, so card data never touches the application.",
     outcome:
-      "TODO — while in development, describe current state honestly (what works today) rather than projected results.",
-    stack: ["TODO — confirm stack"],
-    metrics: [],
+      "In development, and honest about it: the billing engine, auto-pay, payment history and platform billing all run end to end against the CyberSource sandbox, covered by integration tests on a dedicated database. Multi-tenancy and role-based access were built in from the first migration rather than retrofitted.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "CyberSource",
+      "Material UI",
+      "Vitest",
+    ],
+    metrics: [
+      { value: "46", label: "integration tests over the billing engine" },
+      { value: "Zero", label: "PCI scope — cards tokenized, never stored" },
+    ],
     links: [],
   },
   {
@@ -55,16 +65,19 @@ export const projects: readonly Project[] = [
     name: "Barefoot Nomad",
     context: "Andela · Team project",
     status: "archived",
-    // TODO(raymond): confirm the product description and add the GitHub repo link.
     summary:
-      "TODO — confirm: a travel and accommodation request platform built with a team of fellow trainee developers.",
-    problem: "TODO — the problem the product set out to solve.",
+      "A corporate travel platform — staff raise trip requests, managers approve them, and travellers book accommodation.",
+    problem:
+      "Companies run staff travel through email chains and spreadsheets. Requests get lost between the traveller, the line manager and whoever actually books the hotel, and nobody can see where a request has got to.",
     approach:
-      "Built as a full-stack JavaScript application with a team of trainee developers, working to agile sprints with regular demonstrations to stakeholders.",
+      "Built with a team of fellow trainee developers over agile sprints, with regular demonstrations to stakeholders. An Express and Sequelize API over PostgreSQL models the whole domain — multi-city trip requests, approval chains, hotel and room inventory, bookings, comment threads and notifications — behind a multi-role permission model. Sessions are JWT with Google and Facebook sign-in and optional two-factor; the React and Redux client handles the booking and checkout journeys.",
     outcome:
-      "TODO — what shipped, and your specific contribution. Worth stating plainly that this is early work and no longer deployed.",
-    stack: ["Node.js", "Express", "PostgreSQL", "React", "Redux"],
+      "Shipped and demonstrated, with a large backend test suite running on Travis CI alongside Coveralls coverage and automated review. No longer deployed — it went down with Heroku's free tier in 2022. This is early work and the code shows it in places, but the domain modelling and the review discipline hold up.",
+    stack: ["Node.js", "Express", "PostgreSQL", "Sequelize", "React", "Redux", "Jest"],
     metrics: [],
-    links: [],
+    links: [
+      { label: "Backend on GitHub", href: "https://github.com/RaymondMwaura/My-BN-Copy-Backend" },
+      { label: "Frontend on GitHub", href: "https://github.com/RaymondMwaura/My-BN-Copy-Frontend" },
+    ],
   },
 ];
