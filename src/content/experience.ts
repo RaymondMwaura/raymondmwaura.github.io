@@ -18,7 +18,6 @@ export const positions: readonly Position[] = [
           "Built end-to-end payment journeys across M-Pesa STK Push, card (CyberSource, ABSA) and offline channels, including a reusable Card Payment V2 component adopted across the Domains, Business Fibre, 4G and 5G buy journeys.",
           "Delivered billing and invoicing end to end — invoices, receipts, dispute reporting and admin finance views — plus support ticketing with CRM and WDE integration.",
           "Remediated Veracode-flagged security vulnerabilities and upgraded core dependencies across the self-service portal.",
-          "Shipped 153 tracked items in FY2024–25; rated “Well Done” in the FY2023–24 review and scored 5/5 on all four culture pillars in 360-degree peer feedback.",
         ],
       },
       {
@@ -115,7 +114,7 @@ export const earlierRoles: readonly EarlierRole[] = [
 
 export const qualifications: readonly Qualification[] = [
   {
-    credential: "BSc Business Information Technology",
+    credential: "Bachelor of Business Information Technology (BBIT)",
     institution: "Strathmore University, Nairobi",
     period: "2019",
     distinction: "First Class Honours",
