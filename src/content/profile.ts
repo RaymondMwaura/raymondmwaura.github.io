@@ -8,7 +8,7 @@ export const profile = {
   location: "Nairobi, Kenya",
   timezone: "UTC+3",
   availability: "Working remotely",
-  email: "raywachaga@hotmail.com",
+  email: "raymwauradev@gmail.com",
   github: "https://github.com/RaymondMwaura",
 
   /** Used as the meta description and the hero's leading paragraph. */
