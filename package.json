@@ -1,29 +1,39 @@
 {
-  "name": "unique-vcard",
-  "version": "1.0.0",
-  "description": "Portfolio template",
-  "main": "index.html ",
-  "scripts": {
-    "test": "test",
-    "lint": "eslint --fix ./src"
-  },
+  "name": "raymondmwaura-portfolio",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Personal portfolio of Raymond Mwaura, frontend engineer",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/n/a.git"
+    "url": "git+https://github.com/RaymondMwaura/raymondmwaura.github.io.git"
   },
-  "keywords": [
-    "portfolio"
-  ],
-  "author": "raymond",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/n/a/issues"
+  "author": "Raymond Mwaura",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --build && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --build --force",
+    "lint": "biome check .",
+    "format": "biome check --write ."
   },
-  "homepage": "https://github.com/n/a#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@fontsource-variable/ibm-plex-sans": "^5.3.0",
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
   "devDependencies": {
-    "eslint": "^8.13.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "@biomejs/biome": "^2.5.6",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.1.2",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.0.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.0"
   }
 }
