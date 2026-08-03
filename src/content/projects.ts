@@ -29,7 +29,8 @@ export const projects: readonly Project[] = [
     links: [{ label: "Visit Business Hub", href: "https://www.business.safaricom.co.ke/" }],
     image: {
       src: safaricomBusinessHub,
-      alt: "The Safaricom Business Hub enterprise self-service portal",
+      // The landing page specifically — it is the surface the performance work above refers to.
+      alt: "The Safaricom Business Hub landing page, showing the corporate post-pay offer",
     },
   },
   {
