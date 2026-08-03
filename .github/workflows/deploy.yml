@@ -1,14 +1,18 @@
-name: Deploy to GitHub Pages
+name: Build & Deploy
 
 on:
   push:
+    branches: [master]
+  # Pull requests build and validate but never deploy, so a broken change is caught
+  # on the PR rather than after it has already replaced the live site.
+  pull_request:
     branches: [master]
   workflow_dispatch:
 
 # Allow one concurrent deployment, letting in-progress runs finish so a deploy is
 # never left half-applied.
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
@@ -39,12 +43,16 @@ jobs:
         run: npm run build
 
       - uses: actions/configure-pages@v5
+        if: github.event_name == 'push'
 
       - uses: actions/upload-pages-artifact@v4
+        if: github.event_name == 'push'
         with:
           path: ./dist
 
   deploy:
+    # Only master publishes. A PR run stops after build.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
     environment:
