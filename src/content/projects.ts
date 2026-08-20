@@ -1,3 +1,4 @@
+import hoaFlow from "@/assets/projects/hoa-flow.webp";
 import safaricomBusinessHub from "@/assets/projects/safaricom-business-hub.webp";
 import type { Project } from "./types";
 
@@ -37,7 +38,7 @@ export const projects: readonly Project[] = [
     slug: "hoa-flow",
     name: "HOA Flow",
     context: "Independent project",
-    status: "in-development",
+    status: "live",
     summary:
       "Recurring billing for homeowners' associations — dues generation, auto-pay and late fees on tokenized cards.",
     problem:
@@ -45,7 +46,7 @@ export const projects: readonly Project[] = [
     approach:
       "Billing runs as a database-backed job queue drained by a daily cron rather than as ad-hoc scripts, which makes every step inspectable and re-runnable. Dues generation is idempotent on a period key; status transitions, late fees and auto-pay are separate jobs with a defined running order. Auto-pay claims an attempt counter before it charges and parks uncertain outcomes behind a pending-transaction guard, so a retry or an overlapping run cannot double-charge a resident. Cards are tokenized through CyberSource Flex, so card data never touches the application.",
     outcome:
-      "In development, and honest about it: the billing engine, auto-pay, payment history and platform billing all run end to end against the CyberSource sandbox, covered by integration tests on a dedicated database. Multi-tenancy and role-based access were built in from the first migration rather than retrofitted.",
+      "Live at hoaflow.co.ke: the billing engine, auto-pay, payment history and platform billing run end to end in production, generating real dues and clearing real CyberSource transactions, all covered by integration tests on a dedicated database. Multi-tenancy and role-based access were built in from the first migration rather than retrofitted.",
     stack: [
       "Next.js",
       "TypeScript",
@@ -59,7 +60,11 @@ export const projects: readonly Project[] = [
       { value: "46", label: "integration tests over the billing engine" },
       { value: "Zero", label: "PCI scope — cards tokenized, never stored" },
     ],
-    links: [],
+    links: [{ label: "Visit HOA Flow", href: "https://www.hoaflow.co.ke/" }],
+    image: {
+      src: hoaFlow,
+      alt: "The HoaFlow landing page, showing the 'Collect dues. Keep the peace.' hero and the units, assessments and payments feature cards",
+    },
   },
   {
     slug: "barefoot-nomad",
