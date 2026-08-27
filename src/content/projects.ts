@@ -91,7 +91,11 @@ export const projects: readonly Project[] = [
       "Stripe",
       "Playwright",
     ],
-    metrics: [],
+    metrics: [
+      { value: "192", label: "unit tests across services and schemas" },
+      { value: "37", label: "end-to-end journeys gating every merge" },
+      { value: "3", label: "one-click demo roles, no signup" },
+    ],
     links: [{ label: "Visit Barefoot Nomad", href: "https://www.barefootnomad.co.ke/" }],
     image: {
       src: barefootNomad,
