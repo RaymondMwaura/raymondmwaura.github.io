@@ -75,3 +75,16 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      # deploy-pages succeeding means Pages accepted the artifact, not that the URL serves
+      # it. This checks from the outside, as a visitor would: the page and a file from
+      # public/. Retries give the CDN time to pick up the new deployment.
+      - name: Check the live site responds
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          for target in "$PAGE_URL" "${PAGE_URL%/}/og-image.png"; do
+            curl --fail --silent --show-error --output /dev/null \
+              --retry 5 --retry-delay 10 --retry-all-errors "$target"
+            echo "OK $target"
+          done
