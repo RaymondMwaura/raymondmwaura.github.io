@@ -15,6 +15,7 @@
     "build": "tsc --build && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --build --force",
+    "test:e2e": "playwright test",
     "lint": "biome check .",
     "format": "biome check --write ."
   },
@@ -26,7 +27,9 @@
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@biomejs/biome": "^2.5.6",
+    "@playwright/test": "^1.64.1",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.1.2",
     "@types/react": "^19.2.18",

@@ -14,3 +14,8 @@ yarn-debug.log*
 yarn-error.log*
 
 temp_projects
+
+# Playwright
+/test-results
+/playwright-report
+/blob-report
