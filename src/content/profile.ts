@@ -24,7 +24,7 @@ export const profile = {
     "Most engineers meet a billing system for the first time when they are asked to build one. I met mine with a bank statement in one hand.",
 
   about: [
-    "I spent three years as a practising ACCA accountant — bank reconciliations, supplier aging, tenant invoicing, VAT and PAYE returns, audit support. The work rewarded one habit above all others: nothing is finished until it balances, and the difference is never “close enough”.",
+    "I spent three years as an accountant after qualifying with ACCA — bank reconciliations, supplier aging, tenant invoicing, VAT and PAYE returns, audit support. The work rewarded one habit above all others: nothing is finished until it balances, and the difference is never “close enough”.",
     "I moved into engineering through an internship in 2017 and a developer traineeship at Andela in 2019, joining Safaricom in 2021 as a Software Engineer in Test before moving onto the Business Hub frontend. That habit shows up in the questions I ask before the code: what happens to a part-paid invoice, which side of midnight a transaction belongs to, what the customer sees when the payment gateway times out. On a portal where businesses settle real bills, those questions are the product.",
     "Today I work across the frontend and the pipeline that ships it — React and TypeScript in the browser, blue-green deployments and micro-frontends behind it. I like problems where correctness is measurable and the numbers are auditable.",
   ],
@@ -35,7 +35,7 @@ export const heroFacts = [
   { label: "Current", value: "Safaricom PLC", detail: "Business Hub" },
   { label: "Focus", value: "Payments & billing", detail: "Deployment pipelines" },
   { label: "Stack", value: "React · TypeScript", detail: "Next.js · MUI · AWS" },
-  { label: "Before this", value: "ACCA accountant", detail: "2013 — 2016, practising" },
+  { label: "Before this", value: "Qualified accountant", detail: "ACCA · 2013 — 2016" },
 ] as const;
 
 export const socialLinks: readonly SocialLink[] = [
