@@ -96,8 +96,9 @@ Two custom utilities carry the design's motifs:
 ## Deployment
 
 Pushing to `master` triggers `.github/workflows/deploy.yml`, which lints, typechecks,
-builds, runs the smoke tests and publishes `dist/` to Pages, then checks the live URL
-responds. Pull requests run everything up to the deploy.
+builds, runs the smoke tests and publishes `dist/` to Pages. It then confirms the live
+`index.html` is byte-identical to the one it built, so a deploy that leaves the old site
+in place fails rather than passing. Pull requests run everything up to the deploy.
 
 **One-time setup:** in repo Settings → Pages, set _Source_ to **GitHub Actions**.
 Without this the workflow succeeds but the site still 404s.
