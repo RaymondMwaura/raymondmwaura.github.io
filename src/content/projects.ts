@@ -18,10 +18,18 @@ export const projects: readonly Project[] = [
     problem:
       "A monolithic Next.js application was re-authenticating against Amazon Cognito every three seconds per active user, saturating the auth path and destabilising the frontend. Releases required downtime, and the landing page was scoring around 50% on desktop performance.",
     approach:
-      "Reworked the token lifecycle so authentication resolves once per hour per active user instead of continuously. Decomposed the monolith into micro-frontends to support a blue-green pipeline, and attacked the landing page through code splitting, asset optimisation and Core Web Vitals work. Built the payment layer end to end — M-Pesa STK Push, card via CyberSource and ABSA, and offline channels — behind a reusable Card Payment component.",
+      "Reworked the token lifecycle so authentication resolves once per hour per active user instead of continuously. Decomposed the monolith into micro-frontends to support a blue-green pipeline, and attacked the landing page through code splitting, asset optimisation and Core Web Vitals work. Built the payment layer end to end — M-Pesa STK Push, card via CyberSource and ABSA, and offline channels — behind a reusable Card Payment component, then moved invoice payments onto the shared STK Push service so billing and product payments run on one path to maintain and monitor.",
     outcome:
-      "Roughly a 1,200x reduction in authentication traffic and a materially more stable frontend. Performance score lifted past 85%. The blue-green pipeline was Safaricom's first, enabling zero-downtime releases, and the Card Payment V2 component was adopted across the Domains, Business Fibre, 4G and 5G buy journeys.",
-    stack: ["Next.js", "React", "TypeScript", "Material UI", "AWS Cognito", "Micro-frontends"],
+      "Roughly a 1,200x reduction in authentication traffic and a materially more stable frontend. Performance score lifted past 85%. The blue-green pipeline was Safaricom's first, enabling zero-downtime releases, and the Card Payment V2 component was adopted across the Domains, Business Fibre, 4G and 5G buy journeys. Offline Payments now lets businesses settle invoices by bank transfer through ABSA, Standard Chartered or KCB, or with Loyalty Points, reconciled automatically across ERP and core billing, with Finance tracking each payment in the admin portal.",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "GraphQL",
+      "Material UI",
+      "AWS Cognito",
+      "Micro-frontends",
+    ],
     metrics: [
       { value: "1,200x", label: "reduction in auth API load" },
       // Kept terse so all three metrics stay on one line and the row aligns.
