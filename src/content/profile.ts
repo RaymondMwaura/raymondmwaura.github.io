@@ -11,9 +11,12 @@ export const profile = {
   email: "raymwauradev@gmail.com",
   github: "https://github.com/RaymondMwaura",
 
-  /** Used as the meta description and the hero's leading paragraph. */
+  /** The hero's leading paragraph. The meta description in index.html is separate copy. */
   tagline:
     "Frontend engineer on payments, billing and deployment infrastructure at Safaricom — the enterprise portal where businesses across Kenya buy connectivity and settle invoices. I qualified as an accountant first, which is why I treat a mismatched total as a defect rather than a rounding question.",
+
+  /** The phrase within the tagline set in the accent colour. Must appear in it verbatim. */
+  taglineEmphasis: "Safaricom",
 
   /** The shorter counterweight sitting beside the tagline in the hero. */
   taglineAside:
