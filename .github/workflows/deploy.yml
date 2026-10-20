@@ -23,6 +23,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      index-sha256: ${{ steps.fingerprint.outputs.index-sha256 }}
     steps:
       - uses: actions/checkout@v7
 
@@ -56,6 +58,14 @@ jobs:
           path: playwright-report/
           retention-days: 14
 
+      # Identifies exactly what gets uploaded, so it runs after the smoke tests, which
+      # rebuild dist/. index.html names every hashed JS and CSS file, so its hash changes
+      # whenever any of them do. Runs on pull requests too, so a broken step fails there
+      # rather than at deploy time.
+      - id: fingerprint
+        name: Fingerprint the build
+        run: echo "index-sha256=$(sha256sum dist/index.html | cut -d ' ' -f 1)" >> "$GITHUB_OUTPUT"
+
       - uses: actions/configure-pages@v6
         if: github.event_name == 'push'
 
@@ -76,15 +86,34 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v5
 
-      # deploy-pages succeeding means Pages accepted the artifact, not that the URL serves
-      # it. This checks from the outside, as a visitor would: the page and a file from
-      # public/. Retries give the CDN time to pick up the new deployment.
-      - name: Check the live site responds
+      # deploy-pages succeeding means Pages accepted the artifact, not that visitors get
+      # it. This checks from the outside: the live index.html must be byte-identical to the
+      # one this run built, so a stale deploy fails instead of passing on the old site.
+      # Twenty tries 30s apart outlast the CDN's ten-minute max-age; in practice Pages
+      # purges on deploy and the first try passes.
+      - name: Check the live site serves this build
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+          EXPECTED_SHA256: ${{ needs.build.outputs.index-sha256 }}
         run: |
-          for target in "$PAGE_URL" "${PAGE_URL%/}/og-image.png"; do
-            curl --fail --silent --show-error --output /dev/null \
-              --retry 5 --retry-delay 10 --retry-all-errors "$target"
-            echo "OK $target"
+          for attempt in $(seq 1 20); do
+            live_sha256=$(curl --fail --silent --show-error "$PAGE_URL" | sha256sum | cut -d ' ' -f 1) \
+              || live_sha256="unreachable"
+
+            if [ "$live_sha256" = "$EXPECTED_SHA256" ]; then
+              echo "OK $PAGE_URL serves this build ($EXPECTED_SHA256)"
+              break
+            fi
+
+            if [ "$attempt" -eq 20 ]; then
+              echo "::error::$PAGE_URL never served this build: expected $EXPECTED_SHA256, last saw $live_sha256"
+              exit 1
+            fi
+
+            echo "Attempt $attempt: live page is $live_sha256, waiting for $EXPECTED_SHA256"
+            sleep 30
           done
+
+          curl --fail --silent --show-error --output /dev/null \
+            --retry 5 --retry-delay 10 --retry-all-errors "${PAGE_URL%/}/og-image.png"
+          echo "OK ${PAGE_URL%/}/og-image.png"
