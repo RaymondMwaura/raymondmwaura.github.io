@@ -46,6 +46,10 @@ All copy lives as typed data in [`src/content/`](src/content/) — never inside 
 Adding a project means adding one object to `projects`. The compiler will tell you
 if anything is missing.
 
+The link-preview card, `public/og-image.png`, is rendered from
+[`scripts/og-image.html`](scripts/og-image.html). If the name, title or focus changes,
+edit that file and re-run the one-line Chrome command in its header comment.
+
 ### Design system
 
 The visual design came from Claude Design and is implemented in
