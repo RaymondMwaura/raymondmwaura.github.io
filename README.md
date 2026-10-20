@@ -32,7 +32,25 @@ npm run build      # typecheck + production build to dist/
 npm run preview    # serve the production build locally
 npm run lint       # Biome check
 npm run format     # Biome check --write
+npm run test:e2e   # Playwright smoke tests against a fresh production build
 ```
+
+## Testing
+
+[`e2e/smoke.spec.ts`](e2e/smoke.spec.ts) is deliberately small. The copy is typed data, so
+the compiler already catches a half-finished entry; the smoke tests cover what it can't:
+
+- every image, icon and `og:image` the page references actually exists
+- no console errors or failed requests on load
+- every in-page link has a target
+- the theme toggle works and survives a reload
+- no WCAG 2.2 A/AA violations from axe, in both themes
+
+They run against `vite preview` of the real build. Vite's `appType` is `mpa` rather than
+`spa` so that a missing file 404s locally just as it does on Pages; the SPA fallback
+would answer it with `index.html` and a 200, and the asset check would pass regardless.
+
+First run needs the browser: `npx playwright install chromium`.
 
 ## Editing content
 
@@ -78,7 +96,8 @@ Two custom utilities carry the design's motifs:
 ## Deployment
 
 Pushing to `master` triggers `.github/workflows/deploy.yml`, which lints, typechecks,
-builds and publishes `dist/` to Pages.
+builds, runs the smoke tests and publishes `dist/` to Pages, then checks the live URL
+responds. Pull requests run everything up to the deploy.
 
 **One-time setup:** in repo Settings → Pages, set _Source_ to **GitHub Actions**.
 Without this the workflow succeeds but the site still 404s.
