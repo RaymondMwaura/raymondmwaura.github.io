@@ -49,11 +49,12 @@ export const skillGroups: readonly SkillGroup[] = [
     skills: [
       "React",
       "TypeScript",
-      "Next.js",
+      "Next.js App Router",
       "JavaScript (ES2022+)",
       "Redux",
       "Material UI",
       "Recharts",
+      "Design systems",
       "Micro-frontends",
       "Core Web Vitals",
     ],
@@ -68,7 +69,7 @@ export const skillGroups: readonly SkillGroup[] = [
       "SonarQube",
       "Veracode",
       "Jira",
-      "HP ALM",
+      "HP ALM · Octane",
     ],
   },
   {
@@ -76,7 +77,7 @@ export const skillGroups: readonly SkillGroup[] = [
     skills: [
       "Node.js",
       "Express",
-      "GraphQL",
+      "GraphQL · Apollo Server",
       "REST integration",
       "PostgreSQL",
       "MySQL",
@@ -87,11 +88,11 @@ export const skillGroups: readonly SkillGroup[] = [
   {
     category: "Cloud & Tooling",
     skills: [
-      "AWS EC2 · S3 · RDS",
+      "AWS EC2 · S3 · RDS · EBS",
       "CloudFront · Cognito",
       "Blue-green deployments",
       "CI/CD",
-      "Git & GitHub",
+      "Git · GitHub · GitLab",
       "Postman",
       "Dynatrace",
     ],
