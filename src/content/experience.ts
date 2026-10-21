@@ -30,7 +30,6 @@ export const positions: readonly Position[] = [
         note: "Selected by senior leadership for two assignments, each to accelerate delivery against a compressed deadline",
         highlights: [
           "MyCounty RMS, a multi-tenant platform digitising revenue collection for Kenyan county governments: built the reconciliation module frontend end to end, plus revenue and workforce dashboards in React, Recharts and Material UI that track county officials' collections against targets down to sub-county and ward.",
-          "Consolidated fragmented Postman API collections into a single standardised suite, resolving base-URL and header inconsistencies that were breaking integration calls across the team.",
           // Named on the CV but kept generic here until the product launches publicly.
           "A new enterprise product: built the frontend from scratch and delivered it fully integrated with its backend services in one month, including a multi-step approval workflow.",
         ],
