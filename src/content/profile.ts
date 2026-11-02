@@ -2,7 +2,7 @@ import type { SkillGroup, SocialLink } from "./types";
 
 export const profile = {
   name: "Raymond Mwaura",
-  title: "Frontend Engineer",
+  title: "Software Engineer",
   specialism: "React · TypeScript · Next.js",
   focus: "Enterprise & Fintech Platforms",
   location: "Nairobi, Kenya",
